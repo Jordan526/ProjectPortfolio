@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Project Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 900px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1, h2 {
+            color: #007bff;
+            text-align: center;
+        }
+        section {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 10px;
+            display: block;
+            white-space: pre-wrap;
+            border-left: 4px solid #007bff;
+            font-family: monospace;
+        }
+        img {
+            display: block;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            padding: 5px;
+            background-color: #fff;
+            max-width: 100%;
+        }
+        ul {
+            list-style-type: square;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 10px auto;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Senior Project Portfolio</h1>
+    <section>
+        <h2>Project Overview</h2>
+        <p><strong>VoteSafe</strong> is a voter verification and registration application designed to enhance electoral integrity and accessibility. The project follows Christian values of stewardship, justice, and community engagement. The app streamlines voter registration, ensures accurate verification, and provides educational resources while maintaining security and privacy standards.</p>
+    </section>
+    <section>
+        <h2>Design Diagrams</h2>
+        <p>Below are relevant design diagrams, including system architecture, database schema, and user flow.</p>
+        System Architecture <img src="chart.png" alt="System Architecture">
+        Schema <img src="votesafe_system_architecture.png" alt="Database Schema">
+        Flow Chart <img src="flowchart.png" alt="User Flow">
+    </section>
+    <section>
+        <h2>Code Snippets</h2>
+        <p>Key code implementations used in the project.</p>
+        <code>
+        // Example: Database connection in PHP
+        $conn = new mysqli("localhost", "username", "password", "votesafe_db");
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        </code>
+        <code>
+        // Example: Storing a vote in MySQL
+        $stmt = $conn->prepare("INSERT INTO votes (voter_id, candidate) VALUES (?, ?)");
+        $stmt->bind_param("is", $voter_id, $candidate);
+        $stmt->execute();
+        echo "Vote recorded successfully";
+        </code>
+        <code>
+        // Example: Fetching voter data
+        $result = $conn->query("SELECT * FROM voters");
+        while ($row = $result->fetch_assoc()) {
+            echo "Voter: " . $row['name'] . "<br>";
+        }
+        </code>
+        <code>
+        // Example: JavaScript form validation
+        function validateForm() {
+            let x = document.forms["voteForm"]["voter_id"].value;
+            if (x == "") {
+                alert("Voter ID must be filled out");
+                return false;
+            }
+        }
+        </code>
+        <code>
+        // Example: CSS Styling for the form
+        .form-container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        </code>
+    </section>
+    <section>
+        <h2>Implementation Details</h2>
+        <p>The project was developed using HTML, CSS, and MySQL for data storage. It follows a simple PHP-based server-side implementation for handling user interactions and database operations.</p>
+        <p><strong>Technology Stack:</strong></p>
+        <ul>
+            <li>Frontend: HTML, CSS</li>
+            <li>Backend: PHP</li>
+            <li>Database: MySQL</li>
+        </ul>
+    </section>
+    <section>
+        <h2>How to Access/Run the Project</h2>
+        <ul>
+            <li>Clone the repository from GitHub: <code>git clone 'https://github.com/Jordan526/VoteSAFE.git Visit GitHub Repository</button>
+            </code></li>
+            <li>Set up the MySQL database and import the provided SQL schema</li>
+            <li>Run a local PHP server to handle form submissions</li>
+            <li>Open the <strong>index.html</strong> file in a web browser</li>
+        </ul>
+        <button onclick="window.location.href='https://github.com/Jordan526/VoteSAFE.git'">Visit GitHub Repository</button>
+    </section>
+</body>
+</html>
